@@ -5,6 +5,8 @@ import ConvexClerkProvider from "@/components/providers/ConvexClerkProvider";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModeToggle } from "@/components/theme-toggle";
+import { HeroHeader } from "@/components/hero6-header";
+import FooterSection from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,17 +40,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-        <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            <ModeToggle />
-          </header>
+          <HeroHeader />
           {children}
+
           </ThemeProvider>
         </body>
       </html>

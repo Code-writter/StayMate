@@ -25,11 +25,11 @@ export const syncUser = mutation({
 // Getting all users 
 export const getUser = query({
     handler : async(ctx) => {
-        const identity = await ctx.auth.getUserIdentity()
+        // const identity = await ctx.auth.getUserIdentity()
 
-        if(!identity){
-            throw new Error("user is not authenticated")
-        }
+        // if(!identity){
+        //     throw new Error("user is not authenticated")
+        // }
 
         const users = await ctx.db.query("users").collect()
 
@@ -51,3 +51,10 @@ export const getUserByClerkId = query({
         return user
     }
 })
+// export const getUserById = query({
+//     args : {id : v.string()},
+
+//     handler : async(ctx , args) => {
+//         const user = ctx.db.query("users").withIndex('by_id', (q) => q.eq("_id", args.id)))
+//     }
+// })
