@@ -11,9 +11,9 @@ import { ModeToggle } from './theme-toggle'
 
 const menuItems = [
     { name: 'Features', href: '/features' },
-    { name: 'Pricing', href: '/Pricing' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Contact Us', href: '/contact-us' },
-    { name: 'About', href: '/about-us' },
+    { name: `FAQ's`, href: '/faqs' },
 ]
 
 export const HeroHeader = () => {
@@ -71,7 +71,8 @@ export const HeroHeader = () => {
                                     <div className=' flex items-center gap-8' > 
                                         <Link href={'/roommates/get-all'} >Roomates</Link>
                                         <Link href={'/expenses'} >Expenses</Link>
-                                    
+                                        <Link href={'/user/get-all'} >Near Friends</Link>
+
                                     </div>
                                     
                                 ):("")

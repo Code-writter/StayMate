@@ -5,8 +5,9 @@ import ConvexClerkProvider from "@/components/providers/ConvexClerkProvider";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModeToggle } from "@/components/theme-toggle";
-import { HeroHeader } from "@/components/hero6-header";
+import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default function RootLayout({
           >
           <HeroHeader />
           {children}
-
+          <Toaster />
           </ThemeProvider>
         </body>
       </html>

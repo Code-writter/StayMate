@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '../components/ui/text-effect'
 import { AnimatedGroup } from '../components/ui/animated-group'
-import { HeroHeader } from '@/components/hero6-header'
+import { HeroHeader } from '@/components/header'
 import { SignInButton, SignUpButton } from '@clerk/nextjs'
 
 const transitionVariants = {
@@ -59,7 +59,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mt-8 max-w-2xl text-pretty text-lg">
-                                    Your ultimate dorm companion.
+                                    Smart Living, Seamless Sharing – Effortless Dorm Management for Everyone!
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -119,7 +119,7 @@ export default function HeroSection() {
                                 />
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     {/* <video
-                                        src="https://player.cloudinary.com/embed/?cloud_name=dk6f6nday&public_id=pqyrzcvk5i1qter3foqn&profile=cld-default"
+                                        src="../public/Scene_01-compresed.mov"
                                         width="2700"
                                         height="1440"
                                         loop
