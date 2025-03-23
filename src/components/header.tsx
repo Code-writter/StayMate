@@ -68,10 +68,10 @@ export const HeroHeader = () => {
                             </div>
                             {
                                 isLoaded && isSignedIn ? (
-                                    <div className=' flex items-center gap-8' > 
-                                        <Link href={'/roommates/get-all'} >Roomates</Link>
-                                        <Link href={'/expenses'} >Expenses</Link>
-                                        <Link href={'/user/get-all'} >Near Friends</Link>
+                                    <div className=' flex items-center gap-4' > 
+                                        <Link className=" text-sm text-muted-foreground hover:text-accent-foreground block duration-150" href={'/roommates/get-all'} >Roomates</Link>
+                                        <Link className="text-sm text-muted-foreground hover:text-accent-foreground block duration-150" href={'/expenses'} >Expenses</Link>
+                                        <Link className="text-sm text-muted-foreground hover:text-accent-foreground block duration-150" href={'/user/get-all'} >Near Friends</Link>
 
                                     </div>
                                     
