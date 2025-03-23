@@ -13,7 +13,7 @@ export default defineSchema({
     }).index("by_clerk_id", ["clerkId"]),
 
     roommates : defineTable({
-        roommates : v.array(v.id("users"))
+        roommates : v.array(v.string())
 
     }),
 

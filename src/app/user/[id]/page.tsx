@@ -65,16 +65,32 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // This setup should allow you to query a user from the Convex database using their Clerk ID.
 import { api } from "../../../../convex/_generated/api";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { useParams } from "next/navigation";
 import { Separator } from "@/components/ui/separator"
 import { useAuth } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { useState } from "react";
 
 export default function getUserById() {
     const params = useParams();
     const clerkId = params.id as string;
+    const addedRoommate = useMutation(api.roommates.addRooMate)
+    const [added, setAdded] = useState(false)
+    async function handleAddition(id : string[]){
 
+      try {
+        await addedRoommate({
+          roommates : id.map(u => u) 
+        })
 
+        toast("Roommate added sucessfully")
+        setAdded(true)
+      } catch (error) {
+        
+      }
+    }
      // const age = userId ? calculateAge(userId.birthdate) : null;
     //  Query the user from Convex using the clerkId
     // const existingComments = useQuery(api.comments.getComments, { interviewId });
@@ -121,9 +137,24 @@ export default function getUserById() {
                         <Separator orientation="vertical" />
                         <div> {user.habits} </div>
                       </div>
+                      <div className="mt-10 flex items-start justify-center gap-7" >
+                        {
+                          added === false ? (
+                            <Button onClick={() => {
+                              handleAddition([user.clerkId])
+                            }} className=" hover:cursor-pointer block " >Add Roommate</Button>
+                          ):(
+                            <Button onClick={() => {
+                              handleAddition([user.clerkId])
+                            }} className=" hover:cursor-pointer hidden " >Add Roommate</Button>
+                          )
+                        }
+                        <Button className=" hover:cursor-pointer " variant={"secondary"} > Chat </Button>
+                      </div>
                       </AspectRatio>
+
                     </div>
-                    
+
                </div>
 
           </div>
