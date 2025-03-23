@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
@@ -7,12 +9,12 @@ import { TextEffect } from '../components/ui/text-effect'
 import { AnimatedGroup } from '../components/ui/animated-group'
 import { HeroHeader } from '@/components/header'
 import { SignInButton, SignUpButton } from '@clerk/nextjs'
-
+import { useAuth } from '@clerk/nextjs'
 const transitionVariants = {
     item: {
         hidden: {
             opacity: 0,
-            filter: 'blur(12px)',
+            filter: 'blur(12px)',  
             y: 12,
         },
         visible: {
@@ -29,6 +31,7 @@ const transitionVariants = {
 }
 
 export default function HeroSection() {
+    const { isSignedIn } = useAuth()
     return (
         <>
             <main className="overflow-hidden">
@@ -72,30 +75,56 @@ export default function HeroSection() {
                                             },
                                         },
                                         ...transitionVariants,
-                                    }}
+                                    }}  
                                     className="mt-12 flex items-center gap-2">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
+                                    {
+                                        isSignedIn === true ? (
+                                            <div
+                                            key={1}
+                                            className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                            <Button
+                                                size="lg"
+                                                className="rounded-xl px-5 text-base cursor-pointer"
+                                            >
+                                                Near Friends
+                                            </Button>
+                                            <Button
+                                                key={2}
+                                                
+                                                size="lg"
+                                                variant="ghost"
+                                                className="h-10.5 rounded-xl px-5 text-base cursor-pointer"
+                                            >
+                                                Contact us
+                                            </Button>
+                                        </div>
+                                        )
+                                        : (
+                                            <div
+                                            key={1}
+                                            className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                            <Button
+                                                asChild
+                                                size="lg"
+                                                className="rounded-xl px-5 text-base cursor-pointer">
+    
+                                                {<SignInButton />}
+     
+                                            </Button>
+                                            <Button
+                                                key={2}
+                                                asChild
+                                                size="lg"
+                                                variant="ghost"
+                                                className="h-10.5 rounded-xl px-5 text-base cursor-pointer">
+    
+                                                {<SignUpButton />}
+                                            
+                                            </Button>
+                                        </div>
+                                        )
+                                    }
 
-                                            {<SignInButton />}
- 
-                                        </Button>
-                                    </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5 text-base">
-
-                                        {<SignUpButton />}
-                                        
-                                    </Button>
                                 </AnimatedGroup>
                             </div>
                         </div>
@@ -118,7 +147,7 @@ export default function HeroSection() {
                                 />
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     {/* <video
-                                        src="../public/Scene_01-compresed.mov"
+                                        src="https://youtu.be/Kbb6-YeWXvs?si=QR4cIeGkBdlhte-3"
                                         width="2700"
                                         height="1440"
                                         loop
