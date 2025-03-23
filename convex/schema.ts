@@ -8,13 +8,9 @@ export default defineSchema({
         clerkId : v.string(),
         image : v.optional(v.string()),
         preferences : v.optional(v.array(v.string())),
-        habbits : v.optional(v.array(v.string()))
+        habits : v.optional(v.array(v.string()))
 
-    }).index("by_clerk_id", ["clerkId"])
-        .searchIndex("by_clerk_id", {
-            searchField: "clerkId",
-            filterFields: ["clerkId"],
-        }),
+    }).index("by_clerk_id", ["clerkId"]),
 
     roommates : defineTable({
         roommates : v.array(v.id("users"))

@@ -3,10 +3,7 @@ import { NextResponse } from "next/server";
 
 
 const isProtectedRoute = createRouteMatcher([
-  "/roommates/add-roommate",
-  "/resume(.*)",
-  "/interview(.*)",
-  "/ai-cover-letter(.*)",
+  "/roommates(.*)",
   "/onboarding(.*)"
 ])
 

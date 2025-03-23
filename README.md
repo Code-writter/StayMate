@@ -46,3 +46,28 @@ then webhook [webhook](https://docs.convex.dev/auth/database-auth)
     > paste the url in 
     > paste the secret in Convex Environment variable ```CLERK_WEBHOOK_SECRET```
  - second create the convex/http.ts file
+
+
+
+```<Table>
+        <TableCaption>A list of all users.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Habbits</TableHead>
+            <TableHead className="text-right">Preferences</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {users?.map((user) => (
+            <TableRow onClick={() => getUserDetails(user.clerkId)} key={user._id}>
+              <TableCell className="font-medium">{user.name}</TableCell>
+              <TableCell>{user.email}</TableCell>
+              <TableCell> {user.habbits} </TableCell>
+              <TableCell className="text-right"> {user.preferences} </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+```

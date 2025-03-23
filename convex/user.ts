@@ -25,15 +25,7 @@ export const syncUser = mutation({
 // Getting all users 
 export const getUser = query({
     handler : async(ctx) => {
-        // const identity = await ctx.auth.getUserIdentity()
-
-        // if(!identity){
-        //     throw new Error("user is not authenticated")
-        // }
-
-        const users = await ctx.db.query("users").collect()
-
-        return users
+        return  await ctx.db.query("users").collect() 
     }
 })
 

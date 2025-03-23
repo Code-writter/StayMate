@@ -42,7 +42,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <HeroHeader />
-          {children}
+          <main className=" min-h-screen" >{children}</main>
+          <FooterSection />
           <Toaster />
           </ThemeProvider>
         </body>
