@@ -1,73 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dorm Management System
 
-## Getting Started
+A comprehensive solution for managing dormitory operations, resident information, and facility maintenance.
 
-First, run the development server:
+## 📋 Overview
+
+The Dorm Management System is designed to streamline the administrative processes involved in managing dormitories. It provides tools for room allocation, resident tracking, maintenance requests, visitor management, and more.
+
+## 🎬 Introduction Video
+
+A detailed introduction video for this project is available at [You Tube](https://youtu.be/Kbb6-YeWXvs?si=QR4cIeGkBdlhte-3). This video covers:
+- System features and capabilities
+- User interface walkthrough
+- Basic usage scenarios
+
+## 📊 Presentation
+
+Additional information about this project can be found in the presentation at [Presentation](). The presentation includes:
+- Project goals and objectives
+- Technical architecture
+- Implementation details
+- Future development plans
+
+## ✨ Features
+
+### *The Foundation for Smart Dorm Management*  
+StayMate is more than just a management tool. It’s an all-in-one solution that simplifies dorm life, making shared living more efficient and hassle-free.  
+
+#### *🚀 Fast & Efficient*  
+Seamless task management, automated expense tracking, and quick maintenance requests to keep dorm life smooth.  
+
+#### *💪 Powerful*  
+A comprehensive system that empowers students to manage their dorms effortlessly with real-time collaboration.  
+
+#### *🔒 Secure & Reliable*  
+Data encryption and role-based access ensure student privacy and safety in shared spaces.  
+
+#### *🎨 Customizable*  
+Personalized preferences for task allocation, notifications, and roommate matching for a tailored dorm experience.  
+
+#### *🛠 Total Control*  
+Track expenses, assign responsibilities, and monitor maintenance requests—all in one centralized platform.  
+
+
+## 🛠️ Technology Stack
+
+  - Convex as BaaS
+  - Nextjs as fronend
+  - Clerk for Authentication
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/yourusername/dorm-management.git
+
+# Navigate to the project directory
+cd dorm-management
+
+# Install dependencies
+npm install # or yarn install
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env with your configuration
+
+# Run the application
+npm start # or yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Explain how to configure the application, including:
+- Environment variables
+- Database setup
+- Authentication settings
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributing
 
-## Learn More
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the [insert license here] - see the LICENSE file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👥 Team
 
-## Deploy on Vercel
+- Abhishek Tiwari - Project Lead (Full-Stack)
+- Aayush Tirole - UI/UX Designer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📞 Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions or support, please contact abhishek.tiwari2022@sait.ac.in.
 
----
-For convex with clerk : [Convex&clerk](https://docs.convex.dev/auth/clerk) from there we will change the auth.config.ts
-then create the jwt template for clerk and convex in clerk
+## 🙏 Acknowledgements
 
-then create the user schema and functions 
-
-then webhook [webhook](https://docs.convex.dev/auth/database-auth)
- - first create webhook and take its url and secret key
-    > paste the url in 
-    > paste the secret in Convex Environment variable ```CLERK_WEBHOOK_SECRET```
- - second create the convex/http.ts file
-
-
-
-```<Table>
-        <TableCaption>A list of all users.</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Habbits</TableHead>
-            <TableHead className="text-right">Preferences</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {users?.map((user) => (
-            <TableRow onClick={() => getUserDetails(user.clerkId)} key={user._id}>
-              <TableCell className="font-medium">{user.name}</TableCell>
-              <TableCell>{user.email}</TableCell>
-              <TableCell> {user.habbits} </TableCell>
-              <TableCell className="text-right"> {user.preferences} </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-```
+- Thanks to contributors or supporters.
