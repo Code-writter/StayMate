@@ -15,7 +15,7 @@ A detailed introduction video for this project is available at [You Tube](https:
 
 ## 📊 Presentation
 
-Additional information about this project can be found in the presentation at [Presentation](). The presentation includes:
+Additional information about this project can be found in the presentation at [Presentation](https://docs.google.com/presentation/d/1ylOU7OHWeIb6vZmIYvpdcAEnVDwcoy_b/edit?usp=drive_link&ouid=110898052649139576790&rtpof=true&sd=true). The presentation includes:
 - Project goals and objectives
 - Technical architecture
 - Implementation details
@@ -54,10 +54,10 @@ Track expenses, assign responsibilities, and monitor maintenance requests—all 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/dorm-management.git
+git clone https://github.com/Code-writter/StayMate.git
 
 # Navigate to the project directory
-cd dorm-management
+cd StayMate
 
 # Install dependencies
 npm install # or yarn install
@@ -67,7 +67,7 @@ cp .env.example .env
 # Edit .env with your configuration
 
 # Run the application
-npm start # or yarn start
+npm run dev # or yarn start
 ```
 
 ### Configuration
